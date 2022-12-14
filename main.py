@@ -8,7 +8,6 @@ from PyQt5 import QtGui
 from time import sleep
 import mysql.connector as sqltor
 
-
 User='user'
 def Sleep(wait):
     sleep(wait)
@@ -106,16 +105,12 @@ class LoginScreen(QDialog):
                 
             else:
                 self.error.setText("Invalid Username or Password ")
-    
-
 class MainScreen(QDialog):
     def __init__(self):
         super(MainScreen,self).__init__()
         loadUi("main.ui",self)
         global User
         self.welcome.setText(User)
-    
-    
 #main
 
 app=QApplication(sys.argv)
