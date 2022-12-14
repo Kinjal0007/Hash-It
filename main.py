@@ -5,9 +5,13 @@ from PyQt5.QtWidgets import QDialog, QApplication, QWidget
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtGui import QIcon
 from PyQt5 import QtGui
-
+from time import sleep
 import mysql.connector as sqltor
 
+
+User='user'
+def Sleep(wait):
+    sleep(wait)
 class WelcomeScreen(QDialog):
     def __init__(self):
         super(WelcomeScreen, self).__init__()
@@ -69,7 +73,8 @@ class FillProfileScreen(QDialog):
         super(FillProfileScreen, self).__init__()
         loadUi("fillprofile.ui",self)
         self.image.setPixmap(QPixmap('placeholder.png'))
-    
+        
+
 class LoginScreen(QDialog):
     def __init__(self):
         super(LoginScreen, self).__init__()
@@ -77,7 +82,6 @@ class LoginScreen(QDialog):
         self.passwordfield.setEchoMode(QtWidgets.QLineEdit.Password)
         self.login.clicked.connect(self.loginfunction)
         self.setWindowIcon(QtGui.QIcon("placeholder.png"))
-        
     def loginfunction(self):
         user=self.emailfield.text()
         password=self.passwordfield.text()
@@ -90,12 +94,28 @@ class LoginScreen(QDialog):
             query='SELECT password FROM details WHERE email=\''+user+"\'"
             cur.execute(query)
             result_pass=cur.fetchone()[0]
+            global User
+            User=user
             if(result_pass==password):
                 self.error.setText("Successfully Logged In")
+                User=user
                 print("Account has been successfully logged in...")
+                mainscreen=MainScreen()
+                widget.addWidget(mainscreen)
+                widget.setCurrentIndex(widget.currentIndex()+1)
+                
             else:
                 self.error.setText("Invalid Username or Password ")
-        
+    
+
+class MainScreen(QDialog):
+    def __init__(self):
+        super(MainScreen,self).__init__()
+        loadUi("main.ui",self)
+        global User
+        self.welcome.setText(User)
+    
+    
 #main
 
 app=QApplication(sys.argv)

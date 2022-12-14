@@ -55,7 +55,7 @@ class Ui_Dialog(object):
         self.error = QtWidgets.QLabel(self.widget)
         self.error.setGeometry(QtCore.QRect(390, 530, 371, 41))
         self.error.setStyleSheet("\n"
-"font: 18pt \"MS Shell Dlg 2\";\n"
+"font: 15pt \"MS Shell Dlg 2\";\n"
 "color:rgb(255, 0, 0)")
         self.error.setText("")
         self.error.setObjectName("error")
