@@ -114,8 +114,8 @@ class MainScreen(QDialog):
         loadUi("main.ui",self)
         global User
         self.welcome.setText(User)
-#main
 
+#main
 app=QApplication(sys.argv)
 welcome=WelcomeScreen()
 widget=QtWidgets.QStackedWidget()
