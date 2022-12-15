@@ -11,6 +11,8 @@ import mysql.connector as sqltor
 User='user'
 def Sleep(wait):
     sleep(wait)
+    
+    
 class WelcomeScreen(QDialog):
     def __init__(self):
         super(WelcomeScreen, self).__init__()
@@ -98,6 +100,7 @@ class LoginScreen(QDialog):
             if(result_pass==password):
                 self.error.setText("Successfully Logged In")
                 User=user
+                Sleep(2)
                 print("Account has been successfully logged in...")
                 mainscreen=MainScreen()
                 widget.addWidget(mainscreen)
