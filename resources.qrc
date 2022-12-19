@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>Icon/33-338711_circle-user-icon-blue-hd-png-download.png</file>
+    <file>Icon/check-user-logo-icon-design-vector-22953776.jpg</file>
+    <file>Icon/download.png</file>
+    <file>Icon/placeholder.png</file>
+    <file>Icon/user-profile-with-tick-checkmark-line-icon-system-vector-33343927.jpg</file>
+    <file>Icon/vector-users-icon.jpg</file>
+  </qresource>
+  <qresource prefix="images">
+    <file>Images/abstract-purple-wave-background-dynamic-shapes-composition_467446-11.jpeg</file>
+    <file>Images/bg.jpeg</file>
+    <file>Images/gp.jpeg</file>
+    <file>Images/gradient-abstract-motion-background_23-2149121881.jpeg</file>
+  </qresource>
+</RCC>
