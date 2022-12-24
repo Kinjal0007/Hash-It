@@ -111,7 +111,7 @@ class MainWindow(QMainWindow):
         self.ui=Ui_MainWindow()
         self.ui.setupUi(self)
         
-        loadJsonStyle(self,self.ui)
+        # loadJsonStyle(self,self.ui)
         self.show()
         # QAppSettings.updateAppSettings(self)
         # self.menu = QtWidgets.QMenu()
