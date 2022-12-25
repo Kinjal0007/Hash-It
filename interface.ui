@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1238</width>
-    <height>804</height>
+    <width>1231</width>
+    <height>835</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,6 +44,9 @@ QPushButton{
 background-color:rgb(9,10,37);
 padding:10px 5px;
 border-radius:5px;
+}
+#to_login, #to_register{
+	background-color: transparent;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -70,8 +73,8 @@ border-radius:5px;
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QStackedWidget" name="stackedWidget">
-         <widget class="QWidget" name="page">
+        <widget class="QCustomStackedWidget" name="stackedWidget">
+         <widget class="QWidget" name="registerPage">
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
             <widget class="QLabel" name="label">
@@ -79,7 +82,7 @@ border-radius:5px;
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap resource="resources.qrc">:/icons/Icon/placeholder.png</pixmap>
+              <pixmap resource="QSS/QSS_Resource.qrc">:/icons/Icon/placeholder.png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -165,6 +168,9 @@ border-radius:5px;
                 <property name="text">
                  <string/>
                 </property>
+                <property name="echoMode">
+                 <enum>QLineEdit::Password</enum>
+                </property>
                 <property name="dragEnabled">
                  <bool>false</bool>
                 </property>
@@ -186,6 +192,9 @@ border-radius:5px;
                 <property name="text">
                  <string/>
                 </property>
+                <property name="echoMode">
+                 <enum>QLineEdit::Password</enum>
+                </property>
                 <property name="dragEnabled">
                  <bool>false</bool>
                 </property>
@@ -194,6 +203,18 @@ border-radius:5px;
                 </property>
                 <property name="placeholderText">
                  <string>Confirm Password</string>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QCheckBox" name="checkBox">
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>I've read terms and conditions</string>
                 </property>
                </widget>
               </item>
@@ -213,20 +234,8 @@ border-radius:5px;
              </property>
             </spacer>
            </item>
-           <item alignment="Qt::AlignHCenter">
-            <widget class="QCheckBox" name="checkBox">
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>I've read terms and conditions</string>
-             </property>
-            </widget>
-           </item>
            <item>
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="registerBtn">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -238,7 +247,7 @@ border-radius:5px;
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_2">
+            <widget class="QPushButton" name="to_login">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -264,179 +273,161 @@ border-radius:5px;
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="page_2">
-          <widget class="QPushButton" name="pushButton_3">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>441</y>
-             <width>356</width>
-             <height>41</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-             <underline>true</underline>
-            </font>
-           </property>
-           <property name="text">
-            <string>Not registered? Register</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_5">
-           <property name="geometry">
-            <rect>
-             <x>46</x>
-             <y>185</y>
-             <width>264</width>
-             <height>24</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>12</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Enter Your Information Below</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_6">
-           <property name="geometry">
-            <rect>
-             <x>114</x>
-             <y>138</y>
-             <width>128</width>
-             <height>40</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>20</pointsize>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Log In</string>
-           </property>
-          </widget>
-          <widget class="QFrame" name="frame_2">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>230</y>
-             <width>356</width>
-             <height>131</height>
-            </rect>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_7">
-            <item>
-             <widget class="QLineEdit" name="lineEdit_10">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="dragEnabled">
-               <bool>false</bool>
-              </property>
-              <property name="readOnly">
-               <bool>false</bool>
-              </property>
-              <property name="placeholderText">
-               <string>Username</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="lineEdit_11">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="dragEnabled">
-               <bool>false</bool>
-              </property>
-              <property name="readOnly">
-               <bool>false</bool>
-              </property>
-              <property name="placeholderText">
-               <string>Password</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QPushButton" name="pushButton_4">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>393</y>
-             <width>356</width>
-             <height>41</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Login</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_7">
-           <property name="geometry">
-            <rect>
-             <x>90</x>
-             <y>0</y>
-             <width>171</width>
-             <height>131</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="resources.qrc">:/icons/Icon/check-user-logo-icon-design-vector-22953776.jpg</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_8">
-           <property name="geometry">
-            <rect>
-             <x>140</x>
-             <y>489</y>
-             <width>75</width>
-             <height>18</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>9</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Hash It Pvt</string>
-           </property>
-          </widget>
+         <widget class="QWidget" name="loginPage">
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="QSS/QSS_Resource.qrc">:/icons/Icon/placeholder.png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="label_6">
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Log In</string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="label_5">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Enter Your information below</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_2">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <widget class="QLineEdit" name="lineEdit_10">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="dragEnabled">
+                 <bool>false</bool>
+                </property>
+                <property name="readOnly">
+                 <bool>false</bool>
+                </property>
+                <property name="placeholderText">
+                 <string>Username</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_11">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="echoMode">
+                 <enum>QLineEdit::Password</enum>
+                </property>
+                <property name="dragEnabled">
+                 <bool>false</bool>
+                </property>
+                <property name="readOnly">
+                 <bool>false</bool>
+                </property>
+                <property name="placeholderText">
+                 <string>Password</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="loginBtn">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Login</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>95</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="to_register">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <underline>true</underline>
+              </font>
+             </property>
+             <property name="text">
+              <string>Not registered? Register</string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="label_8">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Hash It Pvt</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </widget>
        </item>
@@ -446,8 +437,17 @@ border-radius:5px;
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomStackedWidget</class>
+   <extends>QStackedWidget</extends>
+   <header>Custom_Widgets.Widgets.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="QSS/QSS_Resource.qrc"/>
+  <include location="C:/Users/kinja/.designer/backup/QSS/QSS_Resource.qrc"/>
  </resources>
  <connections/>
 </ui>
