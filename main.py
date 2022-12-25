@@ -1,7 +1,5 @@
 import sys
 import os
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QDialog, QApplication, QWidget
 from Custom_Widgets.Widgets import *
 from ui_interface import *
 import mysql.connector as sqltor
@@ -111,23 +109,8 @@ class MainWindow(QMainWindow):
         self.ui=Ui_MainWindow()
         self.ui.setupUi(self)
         
-        # loadJsonStyle(self,self.ui)
+        loadJsonStyle(self,self.ui)
         self.show()
-        # QAppSettings.updateAppSettings(self)
-        # self.menu = QtWidgets.QMenu()
-    #     self.menu.addAction("Default-Dark", self.apply_dark_theme)
-    #     self.menu.addAction("Default-Light", self.apply_light_theme)
-    #     self.ui.themeBtn.setMenu(self.menu)
-        
-    # def apply_dark_theme(self):
-    #     settings = QSettings()
-    #     settings.setValue("THEME", "Default-Dark")
-    #     QAppSettings.updateAppSettings(self)
-
-    # def apply_light_theme(self):
-    #     settings = QSettings()
-    #     settings.setValue("THEME", "Default-Light")
-    #     QAppSettings.updateAppSettings(self)
 
 #main
 if __name__ == "__main__":

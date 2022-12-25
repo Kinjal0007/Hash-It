@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceqPMXFS.ui'
+## Form generated from reading UI file 'interfaceMHBqdE.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -11,6 +11,8 @@
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
+
+from Custom_Widgets.Widgets import QCustomStackedWidget
 
 import QSS_Resource
 
@@ -63,7 +65,7 @@ class Ui_MainWindow(object):
         self.widget.setLayoutDirection(Qt.LeftToRight)
         self.verticalLayout_2 = QVBoxLayout(self.widget)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.stackedWidget = QStackedWidget(self.widget)
+        self.stackedWidget = QCustomStackedWidget(self.widget)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.registerPage = QWidget()
         self.registerPage.setObjectName(u"registerPage")
@@ -117,7 +119,7 @@ class Ui_MainWindow(object):
         self.lineEdit_2 = QLineEdit(self.frame)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
         self.lineEdit_2.setFont(font2)
-        self.lineEdit_2.setEchoMode(QLineEdit.PasswordEchoOnEdit)
+        self.lineEdit_2.setEchoMode(QLineEdit.Password)
         self.lineEdit_2.setDragEnabled(False)
         self.lineEdit_2.setReadOnly(False)
 
@@ -126,7 +128,7 @@ class Ui_MainWindow(object):
         self.lineEdit_3 = QLineEdit(self.frame)
         self.lineEdit_3.setObjectName(u"lineEdit_3")
         self.lineEdit_3.setFont(font2)
-        self.lineEdit_3.setEchoMode(QLineEdit.PasswordEchoOnEdit)
+        self.lineEdit_3.setEchoMode(QLineEdit.Password)
         self.lineEdit_3.setDragEnabled(False)
         self.lineEdit_3.setReadOnly(False)
 
@@ -171,21 +173,30 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.registerPage)
         self.loginPage = QWidget()
         self.loginPage.setObjectName(u"loginPage")
-        self.to_register = QPushButton(self.loginPage)
-        self.to_register.setObjectName(u"to_register")
-        self.to_register.setGeometry(QRect(0, 441, 356, 41))
-        self.to_register.setFont(font4)
-        self.label_5 = QLabel(self.loginPage)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(50, 210, 264, 24))
-        self.label_5.setFont(font1)
+        self.verticalLayout_5 = QVBoxLayout(self.loginPage)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.label_7 = QLabel(self.loginPage)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setMinimumSize(QSize(0, 80))
+        self.label_7.setPixmap(QPixmap(u":/icons/Icon/placeholder.png"))
+        self.label_7.setScaledContents(True)
+
+        self.verticalLayout_5.addWidget(self.label_7)
+
         self.label_6 = QLabel(self.loginPage)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(114, 138, 128, 40))
         self.label_6.setFont(font)
+
+        self.verticalLayout_5.addWidget(self.label_6, 0, Qt.AlignHCenter)
+
+        self.label_5 = QLabel(self.loginPage)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setFont(font1)
+
+        self.verticalLayout_5.addWidget(self.label_5, 0, Qt.AlignHCenter)
+
         self.frame_2 = QFrame(self.loginPage)
         self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setGeometry(QRect(0, 230, 371, 161))
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Raised)
         self.verticalLayout_7 = QVBoxLayout(self.frame_2)
@@ -201,25 +212,37 @@ class Ui_MainWindow(object):
         self.lineEdit_11 = QLineEdit(self.frame_2)
         self.lineEdit_11.setObjectName(u"lineEdit_11")
         self.lineEdit_11.setFont(font2)
-        self.lineEdit_11.setEchoMode(QLineEdit.PasswordEchoOnEdit)
+        self.lineEdit_11.setEchoMode(QLineEdit.Password)
         self.lineEdit_11.setDragEnabled(False)
         self.lineEdit_11.setReadOnly(False)
 
         self.verticalLayout_7.addWidget(self.lineEdit_11)
 
+        self.verticalSpacer_3 = QSpacerItem(20, 95, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_7.addItem(self.verticalSpacer_3)
+
+
+        self.verticalLayout_5.addWidget(self.frame_2)
+
         self.loginBtn = QPushButton(self.loginPage)
         self.loginBtn.setObjectName(u"loginBtn")
-        self.loginBtn.setGeometry(QRect(10, 380, 356, 51))
         self.loginBtn.setFont(font2)
-        self.label_7 = QLabel(self.loginPage)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(110, 0, 171, 131))
-        self.label_7.setPixmap(QPixmap(u":/icons/Icon/user-check.png"))
-        self.label_7.setScaledContents(True)
+
+        self.verticalLayout_5.addWidget(self.loginBtn)
+
+        self.to_register = QPushButton(self.loginPage)
+        self.to_register.setObjectName(u"to_register")
+        self.to_register.setFont(font4)
+
+        self.verticalLayout_5.addWidget(self.to_register)
+
         self.label_8 = QLabel(self.loginPage)
         self.label_8.setObjectName(u"label_8")
-        self.label_8.setGeometry(QRect(140, 489, 75, 18))
         self.label_8.setFont(font3)
+
+        self.verticalLayout_5.addWidget(self.label_8, 0, Qt.AlignHCenter)
+
         self.stackedWidget.addWidget(self.loginPage)
 
         self.verticalLayout_2.addWidget(self.stackedWidget)
@@ -249,15 +272,15 @@ class Ui_MainWindow(object):
         self.registerBtn.setText(QCoreApplication.translate("MainWindow", u"Register", None))
         self.to_login.setText(QCoreApplication.translate("MainWindow", u"Already registered? Login", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Hash It Pvt", None))
-        self.to_register.setText(QCoreApplication.translate("MainWindow", u"Not registered? Register", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Enter Your information below", None))
+        self.label_7.setText("")
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Log In", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Enter Your information below", None))
         self.lineEdit_10.setText("")
         self.lineEdit_10.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Username", None))
         self.lineEdit_11.setText("")
         self.lineEdit_11.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Password", None))
         self.loginBtn.setText(QCoreApplication.translate("MainWindow", u"Login", None))
-        self.label_7.setText("")
+        self.to_register.setText(QCoreApplication.translate("MainWindow", u"Not registered? Register", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Hash It Pvt", None))
     # retranslateUi
 
