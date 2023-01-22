@@ -1,7 +1,36 @@
 {
     "QMainWindow": [
         {
-            "tittle": "22 UI Login Form"
+            "tittle": "Hash It"
+        }
+    ],
+    "QSettings": [
+        {
+            "ThemeSettings": [
+                {
+                    "CustomTheme": [
+                        {
+                            "Background-color": "#090a26",
+                            "Text-color": "#fff",
+                            "Accent-color": "#091b44",
+                            "Theme-name": "Default-Dark",
+                            "Icons-color": "#0093ec"
+                        },
+                        {
+                            "Background-color": "#ffff",
+                            "Text-color": "#070808",
+                            "Accent-color": "#ffffff",
+                            "Theme-name": "Default-Light",
+                            "Icons-color": "#0093ec"
+                        }
+                    ]
+                }
+            ],
+            "AppSettings": {
+                "OrginizationName": "22 UI Login Form",
+                "ApplicationName": "22 UI",
+                "OrginizationDormain": "22ui.org"
+            }
         }
     ],
     "QStackedWidget":[

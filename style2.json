@@ -1,0 +1,165 @@
+{
+    "QMainWindow": [
+        {
+            "tittle": "Hash It"
+        }
+    ],
+    "QSettings": [
+        {
+            "ThemeSettings": [
+                {
+                    "CustomTheme": [
+                        {
+                            "Background-color": "#1b1b27",
+                            "Text-color": "#fff",
+                            "Accent-color": "#cc5bce",
+                            "Theme-name": "Default-Dark",
+                            "Icons-color": "#fff",
+                            "Default-Theme": true
+                        }
+                    ]
+                }
+            ],
+            "AppSettings": {
+                "OrginizationName": "Hast It App",
+                "ApplicationName": "Hash It ",
+                "OrginizationDormain": "HashItapp.org"
+            }
+        }
+    ],
+    "QPushButtonGroup": [
+        {
+            "Buttons": [
+                "homeBtn",
+                "accountBtn",
+                "reportsBtn",
+                "settingsBtn",
+                "helpBtn",
+                "aboutBtn"
+            ],
+            "Style":[
+                {
+                    "Active": "background-color: #1b1b27;border-left: 3px solid #cc5bce;font-weight: bold;",
+                    "NotActive": "background-color: transparent; border: none;"
+                }
+            ]
+        }
+    ],
+    "QCustomSlideMenu": [
+        {
+            "name": "leftMenu",
+            "defaultSize": [
+                {
+                    "width": 0,
+                    "height": "parent"
+                }
+            ],
+            "collapsedSize": [
+                {
+                    "width": 0,
+                    "height": "parent"
+                }
+            ],
+            "expandedSize": [
+                {
+                    "width": 200,
+                    "height": "parent"
+                }
+            ],
+            "toggleButton": [
+                {
+                    "buttonName": "menuBtn",
+                    "icons": [
+                        {
+                            "whenMenuIsCollapsed": ":/icons/Icons/align-justify.png",
+                            "whenMenuIsExpanded": ":/icons/Icons/chevron-left.png"
+                        }
+                    ]
+                }
+            ],
+            "menuTransitionAnimation": [
+                {
+                    "animationDuration":500,
+                    "animationEasingCurve": "Linear"
+                }
+            ]
+        },
+        {
+            "name": "rightMenu",
+            "defaultSize": [
+                {
+                    "width": 0,
+                    "height": "parent"
+                }
+            ],
+            "collapsedSize": [
+                {
+                    "width": 0,
+                    "height": "parent"
+                }
+            ],
+            "expandedSize": [
+                {
+                    "width": 200,
+                    "height": "parent"
+                }
+            ],
+            "toggleButton": [
+                {
+                    "buttonName": "showUserFormBtn",
+                    "icons": [
+                        {
+                            "whenMenuIsCollapsed": ":/icons/Icons/plus-square.png",
+                            "whenMenuIsExpanded": ":/icons/Icons/window_close.png"
+                        }
+                    ]
+                }
+            ],
+            "menuTransitionAnimation": [
+                {
+                    "animationDuration":500,
+                    "animationEasingCurve": "Linear"
+                }
+            ]
+        }
+    ],
+    "QStackedWidget":[
+        {
+            "name":"mainPages",
+            "transitionAnimation":[
+                {
+                    "fade":[
+                        {
+                            "active": true,
+                            "duration":1000,
+                            "easingCurve": "OutBack"
+                        }
+                    ],
+                    "slide":[
+                        {
+                            "active":true,
+                            "duration": 1000,
+                            "direction": "horizontal",
+                            "easingCurve": "OutBack"
+                        }
+                    ]
+                }
+            ],
+            "navigation":[
+                {
+                    "navigationButtons":[
+                        {
+                            "homeBtn": "homePage",
+                            "reportsBtn": "reportsPage",
+                            "accountBtn": "accountsPage",
+                            "settingsBtn": "settingsPage",
+                            "helpBtn": "helpPage",
+                            "aboutBtn": "aboutPage"
+                        }
+                    ]
+                }
+            ]
+    
+        }
+    ]
+}
