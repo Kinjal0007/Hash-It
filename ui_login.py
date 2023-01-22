@@ -14,13 +14,12 @@ from PySide2.QtWidgets import *
 
 from Custom_Widgets.Widgets import QCustomStackedWidget
 
-import QSS_Resource_rc
-import QSS_Resource_rc
+import QSS_Resource
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
+            MainWindow.setObjectName(u"LoginWindow")
         MainWindow.resize(1231, 835)
         MainWindow.setLayoutDirection(Qt.LeftToRight)
         MainWindow.setStyleSheet(u"*{\n"
