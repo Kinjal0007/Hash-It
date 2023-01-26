@@ -18,7 +18,6 @@ class MainAppWindow(QMainWindow):
         QAppSettings.updateAppSettings(self)
 
 
-
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
