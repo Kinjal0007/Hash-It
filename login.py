@@ -1,19 +1,30 @@
 import sys
 from Custom_Widgets.Widgets import *
-from ui_login import *
 import mysql.connector as sqltor
-
+from ui_login import *
+from main2 import *
 settings = QSettings()
 user="user"
 
-class MainWindow(QMainWindow):
-    def __init__(self,parent=None):
+class MainAppWindow(QMainWindow):
+    def __init__(self):
         QMainWindow.__init__(self)
         self.ui=Ui_MainWindow()
         self.ui.setupUi(self)
         loadJsonStyle(self, self.ui, jsonFiles = {
-        "style.json"
+        "style2.json"
         })
+        self.show() 
+        QAppSettings.updateAppSettings(self)
+
+
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.ui=Login_Window()
+        self.ui.setupUi(self)
+        loadJsonStyle(self,self.ui)
         self.ui.registerBtn.clicked.connect(self.signupfunction)
         self.ui.loginBtn.clicked.connect(self.loginfunction)
         
@@ -45,16 +56,20 @@ class MainWindow(QMainWindow):
         password=self.ui.passwordfield.text()
     
         if(len(user)==0 or len(password)==0):
-            self.ui.error.setText("Please input all fields")
+            self.ui.error_2.setText("Please input all fields")
         else:
             mycon=sqltor.connect(host="localhost",user="root",passwd="Hello1234@",database="login_details")
             cur=mycon.cursor()
             query='SELECT password FROM details WHERE email=\''+user+"\'"
             cur.execute(query)
             result_pass=cur.fetchone()[0]
+            if (password==result_pass):
+                print("Successfully logged In....","\n")
+                self.MainWindow=MainAppWindow()
+                self.MainWindow.show()
             mycon.close()
             
-    
+
 
 #main
 if __name__ == "__main__":

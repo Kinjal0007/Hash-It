@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginOpYNeA.ui'
+## Form generated from reading UI file 'login.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 6.4.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -13,16 +13,15 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 from Custom_Widgets.Widgets import QCustomStackedWidget
-
 import QSS_Resource
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
-            MainWindow.setObjectName(u"LoginWindow")
-        MainWindow.resize(1231, 835)
-        MainWindow.setLayoutDirection(Qt.LeftToRight)
-        MainWindow.setStyleSheet(u"*{\n"
+class Login_Window(object):
+    def setupUi(self, Login_Window):
+        if not Login_Window.objectName():
+            Login_Window.setObjectName(u"Login_Window")
+        Login_Window.resize(1231, 835)
+        Login_Window.setLayoutDirection(Qt.LeftToRight)
+        Login_Window.setStyleSheet(u"*{\n"
 "border:none;\n"
 "background-color:transparent;\n"
 "background:transparent;\n"
@@ -53,7 +52,7 @@ class Ui_MainWindow(object):
 "#to_login, #to_register{\n"
 "	background-color: transparent;\n"
 "}")
-        self.centralwidget = QWidget(MainWindow)
+        self.centralwidget = QWidget(Login_Window)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -83,7 +82,6 @@ class Ui_MainWindow(object):
         font = QFont()
         font.setPointSize(20)
         font.setBold(True)
-        font.setWeight(75)
         self.label_2.setFont(font)
 
         self.verticalLayout_3.addWidget(self.label_2, 0, Qt.AlignHCenter|Qt.AlignTop)
@@ -232,6 +230,19 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.frame_2)
 
+        self.error_2 = QLabel(self.loginPage)
+        self.error_2.setObjectName(u"error_2")
+        font5 = QFont()
+        font5.setFamilies([u"MS Shell Dlg 2"])
+        font5.setPointSize(11)
+        font5.setBold(False)
+        font5.setItalic(False)
+        self.error_2.setFont(font5)
+        self.error_2.setStyleSheet(u"font: 11pt \"MS Shell Dlg 2\";\n"
+"color:rgb(255, 0, 0)")
+
+        self.verticalLayout_5.addWidget(self.error_2)
+
         self.loginBtn = QPushButton(self.loginPage)
         self.loginBtn.setObjectName(u"loginBtn")
         self.loginBtn.setFont(font2)
@@ -257,38 +268,39 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.widget, 0, Qt.AlignHCenter)
 
-        MainWindow.setCentralWidget(self.centralwidget)
+        Login_Window.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi(Login_Window)
 
-        QMetaObject.connectSlotsByName(MainWindow)
+        QMetaObject.connectSlotsByName(Login_Window)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+    def retranslateUi(self, Login_Window):
+        Login_Window.setWindowTitle(QCoreApplication.translate("Login_Window", u"Login_Window", None))
         self.label.setText("")
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Sign Up", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Enter Your Information Below", None))
+        self.label_2.setText(QCoreApplication.translate("Login_Window", u"Sign Up", None))
+        self.label_3.setText(QCoreApplication.translate("Login_Window", u"Enter Your Information Below", None))
         self.username.setText("")
-        self.username.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Username", None))
+        self.username.setPlaceholderText(QCoreApplication.translate("Login_Window", u"Username", None))
         self.password.setText("")
-        self.password.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Password", None))
+        self.password.setPlaceholderText(QCoreApplication.translate("Login_Window", u"Password", None))
         self.confirm_password.setText("")
-        self.confirm_password.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Confirm Password", None))
-        self.checkBox.setText(QCoreApplication.translate("MainWindow", u"I've read terms and conditions", None))
+        self.confirm_password.setPlaceholderText(QCoreApplication.translate("Login_Window", u"Confirm Password", None))
+        self.checkBox.setText(QCoreApplication.translate("Login_Window", u"I've read terms and conditions", None))
         self.error.setText("")
-        self.registerBtn.setText(QCoreApplication.translate("MainWindow", u"Register", None))
-        self.to_login.setText(QCoreApplication.translate("MainWindow", u"Already registered? Login", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Hash It Pvt", None))
+        self.registerBtn.setText(QCoreApplication.translate("Login_Window", u"Register", None))
+        self.to_login.setText(QCoreApplication.translate("Login_Window", u"Already registered? Login", None))
+        self.label_4.setText(QCoreApplication.translate("Login_Window", u"Hash It Pvt", None))
         self.label_7.setText("")
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Log In", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Enter Your information below", None))
+        self.label_6.setText(QCoreApplication.translate("Login_Window", u"Log In", None))
+        self.label_5.setText(QCoreApplication.translate("Login_Window", u"Enter Your information below", None))
         self.emailfield.setText("")
-        self.emailfield.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Username", None))
+        self.emailfield.setPlaceholderText(QCoreApplication.translate("Login_Window", u"Username", None))
         self.passwordfield.setText("")
-        self.passwordfield.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Password", None))
-        self.loginBtn.setText(QCoreApplication.translate("MainWindow", u"Login", None))
-        self.to_register.setText(QCoreApplication.translate("MainWindow", u"Not registered? Register", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Hash It Pvt", None))
+        self.passwordfield.setPlaceholderText(QCoreApplication.translate("Login_Window", u"Password", None))
+        self.error_2.setText("")
+        self.loginBtn.setText(QCoreApplication.translate("Login_Window", u"Login", None))
+        self.to_register.setText(QCoreApplication.translate("Login_Window", u"Not registered? Register", None))
+        self.label_8.setText(QCoreApplication.translate("Login_Window", u"Hash It Pvt", None))
     # retranslateUi
 

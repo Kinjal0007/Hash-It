@@ -6,7 +6,7 @@ from PySide2.QtWidgets import QTableWidgetItem
 settings = QSettings()
 
 class MainWindow(QMainWindow):
-    def __init__(self, parent=None):
+    def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
