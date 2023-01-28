@@ -60,9 +60,10 @@ class SplashScreen(QMainWindow):
         self.ui.label_description.setText("<strong>WELCOME</strong> TO Hash-It")
 
         # Change Texts
-        QtCore.QTimer.singleShot(1200, lambda: self.ui.label_description.setText("<strong>ESTABLISHING</strong> CONNECTION TO DATABASE"))
-        QtCore.QTimer.singleShot(1500, lambda: self.ui.label_description.setText("<strong>LOADING</strong> DATABASE"))
-        QtCore.QTimer.singleShot(3000, lambda: self.ui.label_description.setText("<strong>LOADING</strong> USER INTERFACE"))
+        QtCore.QTimer.singleShot(1000, lambda: self.ui.label_description.setText("<strong>ESTABLISHING</strong> CONNECTION TO DATABASE"))
+        QtCore.QTimer.singleShot(2200, lambda: self.ui.label_description.setText("<strong>LOADING</strong> DATABASE"))
+        QtCore.QTimer.singleShot(3500, lambda: self.ui.label_description.setText("<strong>LOADING</strong> USER INTERFACE"))
+        QtCore.QTimer.singleShot(4300,lambda: self.ui.label_description.setText("<strong>CONNECTING</strong> TO THE REMOTE SERVER"))
 
 
         ## SHOW ==> MAIN WINDOW
