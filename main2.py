@@ -15,6 +15,7 @@ class MainWindow(QMainWindow):
         })
         self.show() 
         QAppSettings.updateAppSettings(self)
+        
             
 if __name__ == "__main__":
     app = QApplication(sys.argv)

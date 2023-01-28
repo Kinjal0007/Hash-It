@@ -3,8 +3,15 @@ from Custom_Widgets.Widgets import *
 import mysql.connector as sqltor
 from ui_login import *
 from main2 import *
+import platform
 settings = QSettings()
 user="user"
+
+## ==> SPLASH SCREEN
+from ui_splash_screen import Ui_SplashScreen
+
+## ==> GLOBALS
+counter = 0
 
 class MainAppWindow(QMainWindow):
     def __init__(self):
@@ -18,6 +25,76 @@ class MainAppWindow(QMainWindow):
         QAppSettings.updateAppSettings(self)
 
 
+# SPLASH SCREEN
+class SplashScreen(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.ui = Ui_SplashScreen()
+        self.ui.setupUi(self)
+
+        ## UI ==> INTERFACE CODES
+        ########################################################################
+
+        ## REMOVE TITLE BAR
+        self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+
+
+        ## DROP SHADOW EFFECT
+        self.shadow = QGraphicsDropShadowEffect(self)
+        self.shadow.setBlurRadius(20)
+        self.shadow.setXOffset(0)
+        self.shadow.setYOffset(0)
+        self.shadow.setColor(QColor(0, 0, 0, 60))
+        self.ui.dropShadowFrame.setGraphicsEffect(self.shadow)
+
+        ## QTIMER ==> START
+        self.timer = QtCore.QTimer()
+        self.timer.timeout.connect(self.progress)
+        # TIMER IN MILLISECONDS
+        self.timer.start(35)
+
+        # CHANGE DESCRIPTION
+
+        # Initial Text
+        self.ui.label_description.setText("<strong>WELCOME</strong> TO Hash-It")
+
+        # Change Texts
+        QtCore.QTimer.singleShot(1200, lambda: self.ui.label_description.setText("<strong>ESTABLISHING</strong> CONNECTION TO DATABASE"))
+        QtCore.QTimer.singleShot(1500, lambda: self.ui.label_description.setText("<strong>LOADING</strong> DATABASE"))
+        QtCore.QTimer.singleShot(3000, lambda: self.ui.label_description.setText("<strong>LOADING</strong> USER INTERFACE"))
+
+
+        ## SHOW ==> MAIN WINDOW
+        ########################################################################
+        self.show()
+        ## ==> END ##
+
+    ## ==> APP FUNCTIONS
+    ########################################################################
+    def progress(self):
+
+        global counter
+
+        # SET VALUE TO PROGRESS BAR
+        self.ui.progressBar.setValue(counter)
+
+        # CLOSE SPLASH SCREE AND OPEN APP
+        if counter > 100:
+            # STOP TIMER
+            self.timer.stop()
+
+            # SHOW MAIN WINDOW
+            self.main = MainAppWindow()
+            self.main.show()
+
+            # CLOSE SPLASH SCREEN
+            self.close()
+
+        # INCREASE COUNTER
+        counter += 1
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
@@ -26,6 +103,24 @@ class MainWindow(QMainWindow):
         loadJsonStyle(self,self.ui)
         self.ui.registerBtn.clicked.connect(self.signupfunction)
         self.ui.loginBtn.clicked.connect(self.loginfunction)
+        # QAppSettings.updateAppSettings(self)
+        
+    #     self.menu = QtWidgets.QMenu()
+    #     self.menu.addAction("Default-Dark", self.apply_dark_theme)
+    #     self.menu.addAction("Default-Light", self.apply_light_theme)
+
+    #     self.ui.themeBtn.setMenu(self.menu)
+
+    # def apply_dark_theme(self):
+    #     settings = QSettings()
+    #     settings.setValue("THEME", "Default-Dark")
+    #     QAppSettings.updateAppSettings(self)
+
+    # def apply_light_theme(self):
+    #     settings = QSettings()
+    #     settings.setValue("THEME", "Default-Light")
+    #     QAppSettings.updateAppSettings(self)
+        
         
     def signupfunction(self):
         username1=self.ui.username.text()
@@ -64,7 +159,8 @@ class MainWindow(QMainWindow):
             result_pass=cur.fetchone()[0]
             if (password==result_pass):
                 print("Successfully logged In....","\n")
-                self.MainWindow=MainAppWindow()
+                self.MainWindow=SplashScreen()
+                # self.MainWindow=MainAppWindow()
                 self.MainWindow.show()
             mycon.close()
             
@@ -79,5 +175,3 @@ try:
     sys.exit(app.exec_())
 except:
     print("Exiting....")
-
-
