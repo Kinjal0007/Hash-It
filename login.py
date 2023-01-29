@@ -3,6 +3,7 @@ from Custom_Widgets.Widgets import *
 import mysql.connector as sqltor
 from ui_login import *
 from main2 import *
+from functions import *
 import platform
 settings = QSettings()
 user="user"
@@ -23,6 +24,9 @@ class MainAppWindow(QMainWindow):
         })
         self.show() 
         QAppSettings.updateAppSettings(self)
+        AppFunctions.main()
+        AppFunctions.displayUsers(self, AppFunctions.getAllUsers())
+        self.ui.addUserBtn.clicked.connect(lambda: AppFunctions.addUser(self))
 
 
 # SPLASH SCREEN
