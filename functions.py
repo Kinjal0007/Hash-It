@@ -46,7 +46,7 @@ class AppFunctions():
                                         ); 
                                     """
         # Create db connection
-        conn = AppFunctions.create_connection()
+        conn = sqltor.connect(host="localhost",username="root",passwd="Hello1234@",database="login_details")
 
         # create tables
         if conn is not None:
@@ -61,7 +61,7 @@ class AppFunctions():
     ########################################################################
     def getAllUsers():
         # Create db connection
-        conn = AppFunctions.create_connection()
+        conn = sqltor.connect(host="localhost",username="root",passwd="Hello1234@",database="login_details")
 
         get_all_users = """
                             SELECT * FROM Users;
@@ -79,7 +79,7 @@ class AppFunctions():
     ########################################################################
     def addUser(self):
         # Create db connection
-        conn = AppFunctions.create_connection()
+        conn = sqltor.connect(host="localhost",username="root",passwd="Hello1234@",database="login_details")
 
         # Get form values
         userName = self.ui.userName.text()
