@@ -1,1 +1,0 @@
-sqltor.connect(host="localhost",username="root",passwd="Hello1234@",database="login_details")
